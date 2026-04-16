@@ -13,14 +13,15 @@ export default function About() {
             <h3 id="about-heading" className="text-4xl font-black mb-8 leading-tight">Building at the edge of AI and security</h3>
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed max-w-2xl">
               <p>
-                I'm Rubinaath, a first-year CSE student at Easwari Engineering College. I build AI-driven systems
+                I'm Rubinaath, a first-year CSE student at Easwari Engineering College. I try to build end-to-end systems
                 that solve real problems — from <strong className="text-slate-900 font-semibold">cyber threat detection</strong>{' '}
                 to <strong className="text-slate-900 font-semibold">urban emission mapping</strong>.
               </p>
               <p>
-                My long-term goal is <strong className="text-blue-600 font-bold italic">AI Security Engineering</strong> —
-                building intelligent defenses at the intersection of machine learning and cybersecurity.
-                I'm currently deepening fundamentals across OS, networking, and adversarial ML.
+                My interests includes <strong className="text-slate-900 font-semibold">agentic workflows and automation</strong>, Frontend development , CyberSecurity and Open-Source Projects.
+
+                I am open to <strong className="text-slate-900 font-semibold">Research Opportunities</strong>, <strong className="text-slate-900 font-semibold">Internships</strong> and <strong className="text-slate-900 font-semibold">Freelancing</strong>
+
               </p>
             </div>
 
@@ -42,15 +43,15 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <Target className="text-slate-400 mt-1" size={20} aria-label="Target Role icon" />
                 <div>
-                  <h4 className="font-bold text-xs uppercase tracking-widest text-slate-400">Target Role</h4>
-                  <p className="font-bold text-slate-900">AI Security Engineer</p>
+                  <h4 className="font-bold text-xs uppercase tracking-widest text-slate-400">Interests</h4>
+                  <p className="font-bold text-slate-900">AI, CyberSecurity, Frontend Development</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="text-blue-500 mt-1" size={20} aria-label="Availability Status icon" />
                 <div>
                   <h4 className="font-bold text-xs uppercase tracking-widest text-slate-400">Status</h4>
-                  <p className="font-bold text-slate-900 italic">Open to internships</p>
+                  <p className="font-bold text-slate-900">Open to Internships, Research & Freelancing</p>
                 </div>
               </div>
             </div>
@@ -60,7 +61,7 @@ export default function About() {
           <div className="lg:col-span-5 pt-12 lg:pt-0">
 
             {/* Skill stack */}
-            <article className="mt-12 bg-white p-8 rounded-3xl border border-slate-200">
+            <article className="mt-12 bg-white p-10 rounded-[2.5rem] border border-slate-200 hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 group">
               <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-6">Current Skill Stack</h4>
               <div className="space-y-6">
                 {[
