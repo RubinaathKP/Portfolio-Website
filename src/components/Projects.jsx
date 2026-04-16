@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, GitBranch } from 'lucide-react';
 import { projects } from '../data/constants';
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
   const activeP = projects.find((p) => p.id === activeProject);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Pause automatic sliding if a project is actively expanded to be readable
+      if (activeProject !== null) return;
+      
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          const firstChild = scrollRef.current.children[0];
+          const cardWidth = firstChild ? firstChild.offsetWidth : 400;
+          scrollRef.current.scrollBy({ left: cardWidth + 32, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [activeProject]);
+
 
   return (
     <section id="projects" className="py-24 bg-white" aria-labelledby="projects-heading">
@@ -14,12 +36,12 @@ export default function Projects() {
           <h3 id="projects-heading" className="text-4xl font-black">Featured Projects</h3>
         </header>
 
-        <div className="flex overflow-x-auto gap-8 pb-8 mb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={scrollRef} className="flex overflow-x-auto gap-8 pb-8 mb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {projects.map(project => (
             <article
               key={project.id}
               onClick={() => setActiveProject(activeProject === project.id ? null : project.id)}
-              className={`group min-w-[85vw] md:min-w-[400px] snap-center shrink-0 p-8 border-2 flex flex-col justify-between ${activeProject === project.id ? 'border-blue-600 ring-4 ring-blue-50' : 'border-slate-100 hover:border-slate-300'} rounded-3xl transition-all duration-300 cursor-pointer bg-white`}
+              className={`group w-[85vw] lg:w-[calc(33.333%-1.333rem)] shrink-0 snap-start p-8 border-2 flex flex-col justify-between h-[460px] overflow-hidden ${activeProject === project.id ? 'border-blue-600 ring-4 ring-blue-50' : 'border-slate-100 hover:border-slate-300'} rounded-3xl transition-all duration-300 cursor-pointer bg-white`}
               tabIndex={0}
               onKeyDown={(e) => { if (e.key === 'Enter') setActiveProject(activeProject === project.id ? null : project.id); }}
               aria-expanded={activeProject === project.id}

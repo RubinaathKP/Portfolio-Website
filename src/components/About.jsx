@@ -4,11 +4,11 @@ import { MapPin, GraduationCap, Target, CheckCircle2, Play } from 'lucide-react'
 export default function About() {
   return (
     <section id="about" className="py-24 bg-slate-50 border-y border-slate-100" aria-labelledby="about-heading">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex flex-col gap-16 items-start">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
 
-          {/* Bio */}
-          <div className="w-full">
+          {/* Left — bio */}
+          <div className="lg:col-span-7">
             <h2 className="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-4">About Me</h2>
             <h3 id="about-heading" className="text-4xl font-black mb-8 leading-tight">Building at the edge of AI and security</h3>
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed max-w-2xl">
@@ -56,11 +56,11 @@ export default function About() {
             </div>
           </div>
 
-          {/* Skills */}
-          <div className="w-full">
+          {/* Right — video + skills */}
+          <div className="lg:col-span-5 pt-12 lg:pt-0">
 
             {/* Skill stack */}
-            <article className="bg-white p-8 rounded-3xl border border-slate-200">
+            <article className="mt-12 bg-white p-8 rounded-3xl border border-slate-200">
               <h4 className="font-black text-xs uppercase tracking-widest text-slate-400 mb-6">Current Skill Stack</h4>
               <div className="space-y-6">
                 {[

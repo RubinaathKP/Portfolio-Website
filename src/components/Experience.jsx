@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { experience } from '../data/constants';
 
 export default function Experience() {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Scroll by one card width + gap
+          const firstChild = scrollRef.current.children[0];
+          const cardWidth = firstChild ? firstChild.offsetWidth : 400;
+          scrollRef.current.scrollBy({ left: cardWidth + 32, behavior: 'smooth' }); // 32 is gap-8
+        }
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="experience" className="py-24 bg-slate-50 border-t border-slate-100" aria-labelledby="experience-heading">
       <div className="max-w-6xl mx-auto px-6">
@@ -10,9 +30,9 @@ export default function Experience() {
           <h3 id="experience-heading" className="text-4xl font-black">Professional Timeline</h3>
         </header>
 
-        <div className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={scrollRef} className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {experience.map((exp, idx) => (
-            <article key={idx} className="relative min-w-[85vw] md:min-w-[400px] snap-center shrink-0 p-10 bg-white border border-slate-200 rounded-[2.5rem] hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 group flex flex-col h-full">
+            <article key={idx} className="relative w-[85vw] shrink-0 lg:w-[calc(33.333%-1.333rem)] snap-start p-10 bg-white border border-slate-200 rounded-[2.5rem] hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 group flex flex-col h-[550px] overflow-hidden">
               <header className="flex items-center justify-between mb-8">
                 <div className="p-3 bg-slate-50 rounded-2xl group-hover:bg-blue-50 transition-colors" aria-hidden="true">{exp.icon}</div>
                 <div className="text-right">
