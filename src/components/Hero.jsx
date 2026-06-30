@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-bold tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 rounded-md">
             <Cpu size={12} aria-hidden="true" />
-            CSE • Year 1 • Easwari Engineering College (SRM Group)
+            CSE • Year 2 • Easwari Engineering College (SRM Group)
           </div>
 
           <h1 id="hero-title" className="text-6xl md:text-9xl font-black leading-[0.9] tracking-tighter mb-8">

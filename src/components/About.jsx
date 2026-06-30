@@ -13,12 +13,12 @@ export default function About() {
             <h3 id="about-heading" className="text-4xl font-black mb-8 leading-tight">Building at the edge of AI and security</h3>
             <div className="space-y-6 text-lg text-slate-600 leading-relaxed max-w-2xl">
               <p>
-                I'm Rubinaath, a first-year CSE student at Easwari Engineering College. I try to build end-to-end systems
+                I'm Rubinaath, a second-year CSE student at Easwari Engineering College. I try to build end-to-end systems
                 that solve real problems — from <strong className="text-slate-900 font-semibold">cyber threat detection</strong>{' '}
                 to <strong className="text-slate-900 font-semibold">urban emission mapping</strong>.
               </p>
               <p>
-                My interests includes <strong className="text-slate-900 font-semibold">agentic workflows and automation</strong>, Frontend development , CyberSecurity and Open-Source Projects.
+                My interests includes <strong className="text-slate-900 font-semibold">agentic workflows and automation</strong>, Web development , CyberSecurity and Open-Source Projects.
 
                 I am open to <strong className="text-slate-900 font-semibold">Research Opportunities</strong>, <strong className="text-slate-900 font-semibold">Internships</strong> and <strong className="text-slate-900 font-semibold">Freelancing</strong>
 
@@ -37,14 +37,14 @@ export default function About() {
                 <GraduationCap className="text-slate-400 mt-1" size={20} aria-label="Education icon" />
                 <div>
                   <h4 className="font-bold text-xs uppercase tracking-widest text-slate-400">Education</h4>
-                  <p className="font-bold text-slate-900">B.E. CSE, Year 1</p>
+                  <p className="font-bold text-slate-900">B.E. CSE, Year 2</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Target className="text-slate-400 mt-1" size={20} aria-label="Target Role icon" />
                 <div>
                   <h4 className="font-bold text-xs uppercase tracking-widest text-slate-400">Interests</h4>
-                  <p className="font-bold text-slate-900">AI, CyberSecurity, Frontend Development</p>
+                  <p className="font-bold text-slate-900">AI, CyberSecurity, Web Development, Research</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -67,7 +67,7 @@ export default function About() {
                 {[
                   { label: "Languages", color: "text-blue-600", items: ["Python", "JavaScript", "Java", "C"] },
                   { label: "AI / ML", color: "text-purple-600", items: ["Scikit-Learn", "SHAP(XAI)", "Random Forest", "XGBoost", "SGDClassifier"] },
-                  { label: "Frontend", color: "text-pink-600", items: ["React", "HTML/CSS", "TailwindCSS", "Streamlit", "Material UI"] },
+                  { label: "Web Development", color: "text-pink-600", items: ["React", "HTML/CSS", "TailwindCSS", "Streamlit", "ExpressJS"] },
                   { label: "Tools", color: "text-emerald-600", items: ["Git", "FastAPI", "Ollama", "React", "Spring Boot"] },
                 ].map(({ label, color, items }) => (
                   <div key={label}>

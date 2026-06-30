@@ -20,7 +20,7 @@ export default function Navigation() {
           <a href="#about" className="hover:text-blue-600 transition focus:outline-none focus:text-blue-600">About</a>
           <a href="#projects" className="hover:text-blue-600 transition focus:outline-none focus:text-blue-600">Projects</a>
           <a href="#experience" className="hover:text-blue-600 transition focus:outline-none focus:text-blue-600">Timeline</a>
-          <a href="#contact" className="text-blue-600 hover:opacity-80 transition focus:outline-none focus:opacity-80">Connect</a>
+          <a href="#contact" className="text-blue-600 hover:text-blue-700 transition focus:outline-none focus:text-blue-700">Connect</a>
         </div>
       </div>
     </nav>
